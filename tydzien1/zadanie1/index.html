@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+    <script src="kalkulator.js"></script>
+</head>
+<body>
+    <h1>Kalkulator</h1>
+    <form id="kalkulator">
+        <label for="liczba1">Liczba 1:</label>
+        <input type="number" id="liczba1" name="liczba1"> <br> <br>
+        <label for="liczba2">Liczba 2:</label>
+        <input type="number" id="liczba2" name="liczba2"> <br> <br>
+        <label for="operacja">Operacja:</label>
+        <select id="operacja" name="operacja"> <br> <br>
+            <option value="dodaj">Dodawanie</option>
+            <option value="odejmij">Odejmowanie</option>
+            <option value="pomnoz">Mnożenie</option>
+            <option value="podziel">Dzielenie</option>
+        </select>
+        <input type="button" value="Oblicz" onclick="calculate()">
+    </form>
+    <p>Wynik: <span id="wynik"></span></p>
+</body>
+</html>
