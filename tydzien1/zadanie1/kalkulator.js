@@ -15,7 +15,7 @@ function calculate() {
             wynik = liczba1 * liczba2;
             break;
         case "podziel":
-            if (liczba2 === 0) {
+            if (liczba2 == 0) {
                 wynik = "nie wolno dzielić przez zero XD";
             } else {
                 wynik = liczba1 / liczba2;
