@@ -1,13 +1,19 @@
 function palindrome() {
-
-	const text = document.getElementById("text").value.trim().toLowerCase();
+	let text = document.getElementById("text").value;
 	let wynik = document.getElementById("wynik");
-
-	if (text.split("").reverse().join("") == text) {
-		wynik.innerHTML = "podany wynik jest palindromem";
-	} else {
-		wynik.innerHTML = "podany wynik nie jest palindromem";
+  
+	let isPalindrome = true;
+  
+	for (let i = 0; i < text.length / 2; i++) {
+	  if (text[i] !== text[text.length - 1 - i]) {
+		isPalindrome = false;
+		break;
+	  }
 	}
-}
-
-// if ma za zadanie podzielić znaki, odwrócić je, a potem je znowu połączyć
+  
+	if (isPalindrome) {
+	  wynik.innerHTML = "Podane słowo jest palindromem";
+	} else {
+	  wynik.innerHTML = "Podane słowo nie jest palindromem";
+	}
+  }

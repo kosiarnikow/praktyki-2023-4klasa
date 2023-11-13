@@ -1,17 +1,34 @@
-function drugiNajwiekszy(tablica) {
-    // Sprawdź, czy tablica zawiera co najmniej dwa elementy.
-    if (tablica.length < 2) {
-      return null;
+function second() {
+    let napis = document.getElementById("wartosci").value;
+    let wynik = document.getElementById("wynik");
+    let element = napis.split(",");
+    tablica = [];
+  
+    // Bubble sort dla liczb
+    for (let i = 0; i < element.length - 1; i++) {
+      for (let j = 0; j < element.length - i - 1; j++) {
+        if (+element[j] < +element[j + 1]) {
+          [element[j], element[j + 1]] = [element[j + 1], element[j]];
+        }
+      }
     }
   
-    // Jeśli tablica zawiera liczby, sortuj ją malejąco.
-    if (Array.isArray(tablica[0]) === false) {
-      tablica.sort((a, b) => b - a);
+    let drugaNajwieksza = +element[1];
+  
+    // Bubble sort dla stringów
+    for (let i = 0; i < element.length - 1; i++) {
+      for (let j = 0; j < element.length - i - 1; j++) {
+        if (element[j].length < element[j + 1].length) {
+          [element[j], element[j + 1]] = [element[j + 1], element[j]];
+        }
+      }
+    }
+  
+    let drugaNajdluzsza = element[1];
+  
+    if (typeof drugaNajwieksza === 'number') {
+      wynik.innerHTML = drugaNajwieksza + " - chodzi o liczbe";
     } else {
-      // Jeśli tablica zawiera stringi, posortuj ją według długości.
-      tablica.sort((a, b) => b.length - a.length);
+      wynik.innerHTML = drugaNajdluzsza + " - chodzi o slowo";
     }
-  
-    // Zwracaj drugi element w tablicy.
-    return tablica[1];
   }
