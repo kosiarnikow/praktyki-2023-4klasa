@@ -28,7 +28,8 @@ function second() {
   
     if (typeof drugaNajwieksza === 'number') {
       wynik.innerHTML = drugaNajwieksza + " - chodzi o liczbe";
-    } else {
+    } 
+    else {
       wynik.innerHTML = drugaNajdluzsza + " - chodzi o slowo";
     }
   }
