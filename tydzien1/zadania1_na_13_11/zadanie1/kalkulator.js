@@ -25,3 +25,5 @@ function calculate() {
 
     document.getElementById("wynik").textContent = wynik;
 }
+
+// koniec
