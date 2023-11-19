@@ -8,13 +8,11 @@ const books = [
     {title: 'Paranormal', pages: 200, genre: 'thriller', rating: 5}, 
 ];
 
-const getSecondLongestTitle = (books) => {
-    const sortedTitles = books
-      .map((book) => book.title)
-      .sort((a, b) => b.length - a.length);
-    return sortedTitles[1];
-  };
-  
-  const secondLongestTitle = getSecondLongestTitle(books);
-  
-  console.log(`Second longest title: ${secondLongestTitle}`);
+const countPositiveRatings = (books) => {
+  const positiveRatings = books.filter(
+    (book) => book.pages % 2 !== 0 && book.title.includes(/\d/) && book.rating > 5
+  );
+  console.log("ilosc ksiazek spelniajace wymagania:", positiveRatings.length);
+};
+
+countPositiveRatings(books);
